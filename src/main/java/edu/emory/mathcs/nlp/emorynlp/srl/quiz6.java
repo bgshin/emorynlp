@@ -9,14 +9,6 @@ import java.util.*;
  */
 
 public class quiz6 {
-//    NLPNode
-//            semantic_heads
-//    arg_candidate리턴하는 펑션
-//
-//    기븐더 프레디켓
-//    * 서브트리
-//    * 엔세스터스 디펜던츠
-
     public quiz6() {}
 
     public List<NLPNode> getArgumentCandidateList(NLPNode[] nodes, int predicateID)
