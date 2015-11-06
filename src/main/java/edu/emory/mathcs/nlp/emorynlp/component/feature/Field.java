@@ -46,6 +46,7 @@ public enum Field
 	
 	// distributional semantics
 	clusters,
+    wor2vec_clusters,
 	
 	// more
 	binary;	// set

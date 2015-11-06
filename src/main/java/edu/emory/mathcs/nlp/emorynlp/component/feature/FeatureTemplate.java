@@ -31,6 +31,7 @@ import edu.emory.mathcs.nlp.common.util.StringUtils;
 import edu.emory.mathcs.nlp.emorynlp.component.node.NLPNode;
 import edu.emory.mathcs.nlp.emorynlp.component.node.Orthographic;
 import edu.emory.mathcs.nlp.emorynlp.component.state.NLPState;
+import edu.emory.mathcs.nlp.emorynlp.component.util.AmbiguityReader;
 import edu.emory.mathcs.nlp.emorynlp.component.util.GlobalLexica;
 import edu.emory.mathcs.nlp.machine_learning.vector.StringVector;
 
@@ -166,6 +167,11 @@ public abstract class FeatureTemplate<N extends NLPNode,S extends NLPState<N>> i
 		default: return null;
 		}
 	}
+
+    protected String getAmbiguityFeature(N node)
+    {
+        return AmbiguityReader.getAmbiguityClass(node.getLemma());
+    }
 	
 	protected String[] getFeatures(FeatureItem<?> item, N node)
 	{

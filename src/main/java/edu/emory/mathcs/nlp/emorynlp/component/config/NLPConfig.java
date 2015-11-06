@@ -17,6 +17,7 @@ package edu.emory.mathcs.nlp.emorynlp.component.config;
 
 import java.io.InputStream;
 
+import edu.emory.mathcs.nlp.emorynlp.component.util.AmbiguityReader;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
@@ -52,6 +53,7 @@ public abstract class NLPConfig<N extends NLPNode> implements ConfigXML
 	{
 		xml = XMLUtils.getDocumentElement(in);
 		GlobalLexica.init(xml);
+        AmbiguityReader.init(xml);
 	}
 	
 //	=================================== GETTERS & SETTERS ===================================  
