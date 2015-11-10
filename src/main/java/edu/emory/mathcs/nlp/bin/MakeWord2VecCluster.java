@@ -130,7 +130,7 @@ public class MakeWord2VecCluster {
     }
 
     static public void main(String[] args) {
-        String fname = "/Users/bong/Downloads/wiki_nyt.skip.word.50.vectors2.bin.xz";
+        String fname = "/Users/bong/Downloads/w2v.bin";
         String distance = "minko_0.1";
         String algorithm = "elkan";
         int nCluster=100;
