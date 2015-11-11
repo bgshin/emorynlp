@@ -77,7 +77,7 @@ public class AmbiguityReader {
 
     static public String getAmbiguityClass(String word)
     {
-//        return null;
+//        return null; 
         if (ambiguity_classes == null)
             return null;
 

@@ -40,13 +40,6 @@ public abstract class NERFeatureTemplate<N extends NLPNode> extends FeatureTempl
 		N node = state.getNode(item);
 		if (node == null) return null;
 
-//        switch (token.getField())
-//        {
-//            case a : return state.getAmbiguityClass(node);
-//            default: return super.getFeature(token, state, node);
-//        }
-//          https://github.com/clir/clearnlp/blob/376540ea025ccb14a97027737209290350bfd722/src/main/java/edu/emory/clir/clearnlp/component/mode/ner/NERFeatureExtractor.java
-        // https://github.com/clir/clearnlp/blob/376540ea025ccb14a97027737209290350bfd722/src/main/java/edu/emory/clir/clearnlp/component/mode/ner/NERState.java#L104
 		switch (item.field)
 		{
 		case ambiguity_class: return getAmbiguityFeature(node); // To be filled.
