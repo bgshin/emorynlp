@@ -6,9 +6,9 @@ import edu.emory.mathcs.nlp.emorynlp.component.node.NLPNode;
 
 
 /**
- * Created by bong on 11/5/15. 92.95%
+ * Created by bong on 11/5/15. 92.99%
  */
-public class NERFeatureTemplate1<N extends NLPNode> extends NERFeatureTemplate<N> {
+public class NERFeatureTemplate2<N extends NLPNode> extends NERFeatureTemplate<N> {
 
     @Override
     protected void init()
@@ -50,9 +50,13 @@ public class NERFeatureTemplate1<N extends NLPNode> extends NERFeatureTemplate<N
         add(new FeatureItem<>(-2, Field.part_of_speech_tag), new FeatureItem<>(-1, Field.part_of_speech_tag));
         add(new FeatureItem<>( 1, Field.ambiguity_class)   , new FeatureItem<>( 2, Field.ambiguity_class));
 
-        add(new FeatureItem<>( 0, Field.ambiguity_class)   , new FeatureItem<>( 1, Field.ambiguity_class));
-        add(new FeatureItem<>( -1, Field.ambiguity_class)   , new FeatureItem<>( 0, Field.ambiguity_class));
+        add(new FeatureItem<>( -3, Field.ambiguity_class)   , new FeatureItem<>( -2, Field.ambiguity_class));
         add(new FeatureItem<>( -2, Field.ambiguity_class)   , new FeatureItem<>( -1, Field.ambiguity_class));
+        add(new FeatureItem<>( -1, Field.ambiguity_class)   , new FeatureItem<>( 0, Field.ambiguity_class));
+        add(new FeatureItem<>( 0, Field.ambiguity_class)   , new FeatureItem<>( 1, Field.ambiguity_class));
+        add(new FeatureItem<>( 1, Field.ambiguity_class)   , new FeatureItem<>( 2, Field.ambiguity_class));
+        add(new FeatureItem<>( 2, Field.ambiguity_class)   , new FeatureItem<>( 3, Field.ambiguity_class));
+        add(new FeatureItem<>( 1, Field.ambiguity_class)   , new FeatureItem<>( -1, Field.ambiguity_class));
 
         // 3-gram features
         add(new FeatureItem<>(-3, Field.named_entity_tag), new FeatureItem<>(-2, Field.named_entity_tag), new FeatureItem<>( 1, Field.ambiguity_class));
@@ -87,3 +91,4 @@ public class NERFeatureTemplate1<N extends NLPNode> extends NERFeatureTemplate<N
 //        addSet(new FeatureItem<>(2, Field.ambiguity_class_clusters));
     }
 }
+

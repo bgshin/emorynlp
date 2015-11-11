@@ -46,6 +46,7 @@ public enum Field
 	
 	// distributional semantics
 	clusters,
+    ambiguity_class_clusters,
     wor2vec_clusters,
 	
 	// more

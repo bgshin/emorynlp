@@ -26,8 +26,8 @@ import edu.emory.mathcs.nlp.emorynlp.component.train.NLPOnlineTrain;
 import edu.emory.mathcs.nlp.emorynlp.component.train.TrainInfo;
 import edu.emory.mathcs.nlp.emorynlp.ner.NERState;
 import edu.emory.mathcs.nlp.emorynlp.ner.NERTagger;
-import edu.emory.mathcs.nlp.emorynlp.ner.features.NERFeatureTemplate0;
-import edu.emory.mathcs.nlp.emorynlp.ner.features.NERFeatureTemplate1;
+import edu.emory.mathcs.nlp.emorynlp.ner.features.*;
+
 import edu.emory.mathcs.nlp.machine_learning.model.StringModel;
 import edu.emory.mathcs.nlp.machine_learning.optimization.OnlineOptimizer;
 import edu.emory.mathcs.nlp.machine_learning.vector.WeightVector;
@@ -64,10 +64,15 @@ public class NERTrain extends NLPOnlineTrain<NLPNode,NERState<NLPNode>>
 	
 	protected FeatureTemplate<NLPNode,NERState<NLPNode>> createFeatureTemplate()
 	{
+        System.out.println("feature_template="+feature_template);
 		switch (feature_template)
 		{
 		case  0: return new NERFeatureTemplate0<NLPNode>();
         case  1: return new NERFeatureTemplate1<NLPNode>();
+        case  2: return new NERFeatureTemplate2<NLPNode>();
+        case  3: return new NERFeatureTemplate3<NLPNode>();
+        case  4: return new NERFeatureTemplate4<NLPNode>();
+        case  5: return new NERFeatureTemplate5<NLPNode>();
 		default: throw new IllegalArgumentException("Unknown feature template: "+feature_template);
 		}
 	}

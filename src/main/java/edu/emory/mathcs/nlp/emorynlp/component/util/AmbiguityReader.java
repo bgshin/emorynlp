@@ -4,6 +4,7 @@ import edu.emory.mathcs.nlp.common.util.BinUtils;
 import edu.emory.mathcs.nlp.common.util.DSUtils;
 import edu.emory.mathcs.nlp.common.util.IOUtils;
 import edu.emory.mathcs.nlp.common.util.XMLUtils;
+import edu.emory.mathcs.nlp.emorynlp.component.node.NLPNode;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
@@ -76,10 +77,29 @@ public class AmbiguityReader {
 
     static public String getAmbiguityClass(String word)
     {
+//        return null;
         if (ambiguity_classes == null)
             return null;
 
         return ambiguity_classes.get(word);
+    }
+
+    static public String[] getAmbiguityClassSet(NLPNode node)
+    {
+        if (ambiguity_classes == null)
+            return null;
+
+        List<String> wordList = new ArrayList<>();
+
+        for (NLPNode anc:node.getAncestorSet()) {
+            for (NLPNode sib :anc.getDependentList()) {
+                String ac = ambiguity_classes.get(sib.getLemma());
+                if (ac != null)
+                    wordList.add(ac);
+            }
+        }
+
+        return wordList.toArray(new String[wordList.size()]);
     }
 
 }

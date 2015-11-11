@@ -179,7 +179,8 @@ public abstract class FeatureTemplate<N extends NLPNode,S extends NLPState<N>> i
 		{
 		case binary: return getBinaryFeatures(node);
 		case orthographic: return getOrthographicFeatures(node);
-		case clusters: return GlobalLexica.getClusterFeatures(node.getWordForm(), (Integer)item.value);
+		case clusters: return GlobalLexica.getClusterFeatures(node.getWordForm(), (Integer) item.value);
+        case ambiguity_class_clusters: return AmbiguityReader.getAmbiguityClassSet(node);
 		default: return null;
 		}
 	}
